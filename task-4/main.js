@@ -4,22 +4,14 @@ prompt.start();
 prompt.get("input", function (err, result) {
   var input = result.input; // "5,3 5 6 8 9"
   var arr = input.split(","); // ['5', '3 5 6 8 9']
-  let max = -Infinity;
-  let sum= 0;
-  let count;
-  for(i=0; i<arr.length; i++){
-    sum= sum+arr[i];
-    if( arr[i]>max){
-      max=arr[i]
-      count = 1;
-    }else if(arr[i]==max){
-      count ++
+  let arr2=[];
+
+  for(i=0; i<arr.length; i++){  
+    if(!arr2.includes(arr[i])){
+    arr2.push(arr[i])
+   
     }
-
   }
-
-  if(sum/arr.length < max){
-    console.log(max)
-   console.log(count)
-  }
+  console.log(arr2)
+  
 });
